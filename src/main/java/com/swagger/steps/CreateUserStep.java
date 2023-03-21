@@ -18,9 +18,10 @@ public class CreateUserStep {
     }
 
     @Step
-    public void verifyStatus(String code, String message) {
-        int codeNumber = Integer.parseInt(code);
-        assertThat(lastResponse().getStatusCode()).isEqualTo(codeNumber);
-        assertThat(lastResponse().getBody().asString()).contains(message);
+    public void verifyStatus(int code, int message) {
+        String messageNew = String.valueOf(message);
+
+        assertThat(lastResponse().getStatusCode()).isEqualTo(code);
+        assertThat(lastResponse().getBody().asString()).contains(messageNew);
     }
 }

@@ -23,8 +23,8 @@ public class CreateUsersDefinitions {
         createUserStep.createUser(ConverterJson.converter(user));
     }
 
-    @Then("verify user creation with status {string} and message {string}")
-    public void verifyUserCreationWithStatusAndMessage(String code, String message) {
+    @Then("verify user creation with status {int} and message {int}")
+    public void verifyUserCreationWithStatusAndMessage(int code, int message) {
         createUserStep.verifyStatus(code, message);
     }
 

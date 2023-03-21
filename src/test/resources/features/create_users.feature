@@ -8,11 +8,11 @@ Feature: Create user and place order
   Scenario Outline: Validate the creation of a user
     When create a user
       | <id> | <username> | <firstName> | <lastName> | <email> | <password> | <phone> | <userStatus> |
-    Then  verify user creation with status "200" and message "1"
+    Then  verify user creation with status <status> and message <id>
 
     Examples:
-      | id | username | firstName | lastName | email               | password | phone    | userStatus |
-      | 9  | Milena9  | Guzman9   | Medina9  | Milena9@yopmail.com | 456789   | 12356891 | 0          |
+      | id | username | firstName | lastName | email               | password | phone    | userStatus | status |
+      | 10 | Milena20 | Guzman20  | Medina20 | Milena9@yopmail.com | 456789   | 12356891 | 0          | 200    |
 
   @CaseTwo
   Scenario Outline: Validate the order for a pet
